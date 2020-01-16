@@ -13,9 +13,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-window.addEventListener('load', () => {
-  document.getElementById('main').insertAdjacentHTML(
-    'afterbegin',
-    '<section class="card welcome"><h3>Welcome!</h3></section>'
-  );
-});
+// window.addEventListener('load', () => {
+//   document.getElementById('main').insertAdjacentHTML(
+//     'afterbegin',
+//     '<section class="card welcome"><h3>Welcome!</h3></section>'
+//   );
+// });
