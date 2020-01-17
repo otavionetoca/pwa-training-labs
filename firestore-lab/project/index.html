@@ -115,7 +115,19 @@ limitations under the License.
     </div>
   </div>
 
-  <!-- TODO - add Firebase libraries here -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => {
+            console.log('Service worker registered! 😎', reg);
+          })
+          .catch(err => {
+            console.log('😥 Registration failed: ', err);
+          });
+      });
+    }
+  </script>
 
   <script src="https://unpkg.com/navigo@6"></script>
 
@@ -123,5 +135,9 @@ limitations under the License.
   <script src="/scripts/SpaceRace.View.js"></script>
   <script src="/scripts/SpaceRace.Mock.js"></script>
   <script src="/scripts/SpaceRace.Data.js"></script>
+  <script src="/__/firebase/7.7.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.7.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.7.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
 </body>
 </html>
