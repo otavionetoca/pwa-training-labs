@@ -50,7 +50,10 @@ limitations under the License.
   // Send custom analytics event
 
   const favorite = () => {
-    // TODO Send a custom event
+    gtag('event', 'favorite', {
+      'event_category': 'photos',
+      'event_label': 'cats'
+    });
   };
   const favoriteButton = document.getElementById('favorite');
   favoriteButton.addEventListener('click', favorite);
@@ -66,7 +69,11 @@ limitations under the License.
           reg.pushManager.subscribe({userVisibleOnly: true})
           .then(subscription => {
             console.log('Subscribed to push,', subscription);
-            // TODO Send subscribe event
+            
+            gtag('event', 'subscribe', {
+              'event_category': 'push',
+              'event_label': 'cat updates'
+            });
           })
           .catch(error => {
             if (Notification.permission === 'denied') {
@@ -108,7 +115,11 @@ limitations under the License.
     })
     .catch(error => {
       console.warn('Error unsubscribing', error);
-      // Optional TODO - Send hits for unsubscribe error
+      
+      gtag('event', 'unsubscribe', {
+        'event_category': 'push',
+        'event_label': 'cat updates'
+      });
     });
   };
   const unsubscribeButton = document.getElementById('unsubscribe');
